@@ -1,0 +1,1 @@
+(function(e,t){typeof exports=="object"&&typeof module<"u"?t(exports):typeof define=="function"&&define.amd?define(["exports"],t):t(e["fa-kit-87dbbed081"]={})})(this,function(e){"use strict";Object.defineProperty(e,"__esModule",{value:!0})});
