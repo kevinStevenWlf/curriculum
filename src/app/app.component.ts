@@ -22,10 +22,17 @@ export class AppComponent {
     { src: 'assets/tech/azure.svg', alt: 'Azure' },
     { src: 'assets/tech/django.svg', alt: 'django' },
     { src: 'assets/tech/mariadb.svg', alt: 'MariaDb' },
-    { src: 'assets/tech/flask.svg', alt: 'Flask' }
+    { src: 'assets/tech/flask.svg', alt: 'Flask' },
+    { src: 'assets/tech/docker.svg', alt: 'Docker' },
   ];
 
   get techStackInfinite() {
     return [...this.techStack, ...this.techStack];
+  }
+
+  activeSection: 'about' | 'resume' | 'portfolio' | 'certifications' | 'contact' = 'about';
+
+  setSection(section: 'about' | 'resume' | 'portfolio' | 'certifications' | 'contact') {
+    this.activeSection = section;
   }
 }
