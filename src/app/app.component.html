@@ -1,2 +1,96 @@
-<h1>Este es mi curriculum</h1>
-<h2>Hola Mundo</h2>
+<div class="main-container">
+  <aside class="sidebar">
+    <img src="/assets/programmer.svg" class="avatar">
+    <h1 class="name">Kevin Steven Perez</h1>
+    <p class="role">Full Stack Engineer</p>
+    <ul class="info info-modern">
+      <li class="info-item"><i class="fa-thin fa-envelope"></i> kevinsteven7497&#64;gmail.com</li>
+      <li class="info-item"><i class="fa-thin fa-phone-volume"></i> +57 310 459 3997</li>
+      <li class="info-item"><i class="fa-thin fa-cake-candles"></i> April 7, 1997</li>
+      <li class="info-item"><i class="fa-thin fa-location-dot"></i> Bogotá, Colombia</li>
+    </ul>
+    <div class="sidebar-social">
+      <a href="https://www.linkedin.com/in/kevin-steven-perez-pineda-607165366/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://wa.me/573104593997" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a href="https://www.facebook.com/kevin.steven.778?locale=es_LA" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+    </div>
+  </aside>
+
+  <section class="content">
+    <nav class="menu">
+      <a href="#" class="active">About</a>
+      <a href="#">Resume</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="section about">
+      <h2>About Me</h2>
+      <p>
+        Systems engineer with over 5 years of experience in software development, cloud architecture design, and the creation of high-impact technological solutions, primarily in the mobility and healthcare sectors. Throughout my career, I have participated in full stack development projects, large-scale data processing, and the deployment of microservices on platforms such as Google Cloud Platform and Azure.
+        I have had the opportunity to work in demanding production environments, taking on roles such as web developer, data engineer, and senior full stack developer, leading the development of REST APIs, IoT integrations, and artificial intelligence solutions applied to clinical data.
+      </p>
+      <p>
+        I aim to contribute to impactful software projects while growing as a professional through constant learning and hands-on experience across diverse tech stacks.
+      </p>
+    </div>
+
+    <div class="section services">
+      <h2>What I'm Doing</h2>
+      <div class="cards cards-2col">
+        <div class="card">
+          <div class="card-row">
+            <img src="assets/web-desing.svg" alt="">
+            <div>
+              <h3>Web Design</h3>
+              <p>Modern and high-quality design at a professional level.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-row">
+            <img src="assets/web-development.svg" alt="">
+            <div>
+              <h3>Web Development</h3>
+              <p>High-quality development of sites at the professional level.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-row">
+            <img src="assets/cloudcomputing.svg" alt="">
+            <div>
+              <h3>Cloud Computing</h3>
+              <p>Uso de servicios en la nube como GCP y Azure.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-row">
+            <img src="assets/artifical-intelligence.svg" alt="">
+            <div>
+              <h3>IA Developer</h3>
+              <p>Desarrollo IA , modelos NLP, reconocimiento de objetos y modelos conversacionales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section tech-stack">
+      <h2>Tech Stack</h2>
+      <div class="carousel">
+        <div class="carousel-track">
+          <img *ngFor="let tech of techStackInfinite" [src]="tech.src" [attr.alt]="tech.alt" />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
