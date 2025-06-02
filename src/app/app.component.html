@@ -1,274 +1,483 @@
-<div class="main-container">
-    <aside class="sidebar">
-        <img src="assets/profile.png" class="avatar">
-        <h1 class="name">Kevin Steven Perez</h1>
-        <p class="role">Full Stack Engineer</p>
-        <ul class="info info-modern">
-            <li class="info-item"><i class="fa-thin fa-envelope"></i> kevinsteven7497&#64;gmail.com</li>
-            <li class="info-item"><i class="fa-thin fa-phone-volume"></i> +57 310 459 3997</li>
-            <li class="info-item"><i class="fa-thin fa-cake-candles"></i> April 7, 1997</li>
-            <li class="info-item"><i class="fa-thin fa-location-dot"></i> Bogotá, Colombia</li>
-        </ul>
-        <div class="sidebar-social">
-            <a href="https://www.linkedin.com/in/kevin-steven-perez-pineda-607165366/" target="_blank"
-                rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://wa.me/573104593997" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="https://www.facebook.com/kevin.steven.778?locale=es_LA" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-        </div>
-    </aside>
+<body [class.light-theme]="isLightTheme">
+    <div class="theme-toggle" (click)="toggleTheme()" [title]="isLightTheme ? 'Modo oscuro' : 'Modo claro'">
+        <i class="fa-duotone fa-regular " [ngClass]="isLightTheme ? 'fa-moon' : 'fa-sunglasses'"></i>
+    </div>
+    <div class="main-container">
+        <aside class="sidebar">
+            <img src="assets/profile.png" class="avatar">
+            <h1 class="name">Kevin Steven Perez</h1>
+            <p class="role">Full Stack Engineer</p>
+            <ul class="info info-modern">
+                <li class="info-item"><i class="fa-thin fa-envelope"></i> kevinsteven7497&#64;gmail.com</li>
+                <li class="info-item"><i class="fa-thin fa-phone-volume"></i> +57 310 459 3997</li>
+                <li class="info-item"><i class="fa-thin fa-cake-candles"></i> Abril 7, 1997</li>
+                <li class="info-item"><i class="fa-thin fa-location-dot"></i> Bogotá, Colombia</li>
+            </ul>
+            <div class="sidebar-social">
+                <a href="https://www.linkedin.com/in/kevin-steven-perez-pineda-607165366/" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/573104593997" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.facebook.com/kevin.steven.778?locale=es_LA" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </aside>
 
-    <section class="content">
-        <nav class="menu">
-            <a href="#" [class.active]="activeSection === 'about'"
-                (click)="setSection('about'); $event.preventDefault()">About</a>
-            <a href="#" [class.active]="activeSection === 'resume'"
-                (click)="setSection('resume'); $event.preventDefault()">Resume</a>
-            <a href="#" [class.active]="activeSection === 'portfolio'"
-                (click)="setSection('portfolio'); $event.preventDefault()">Portfolio</a>
-            <a href="#" [class.active]="activeSection === 'certifications'"
-                (click)="setSection('certifications'); $event.preventDefault()">Certifications</a>
-            <a href="#" [class.active]="activeSection === 'contact'"
-                (click)="setSection('contact'); $event.preventDefault()">Contact</a>
-        </nav>
+        <section class="content">
+            <nav class="menu">
+                <a href="#" [class.active]="activeSection === 'about'"
+                    (click)="setSection('about'); $event.preventDefault()">Acerca de</a>
+                <a href="#" [class.active]="activeSection === 'resume'"
+                    (click)="setSection('resume'); $event.preventDefault()">Resumen</a>
+                <a href="#" [class.active]="activeSection === 'portfolio'"
+                    (click)="setSection('portfolio'); $event.preventDefault()">Portafolio</a>
+                <a href="#" [class.active]="activeSection === 'certifications'"
+                    (click)="setSection('certifications'); $event.preventDefault()">Certificaciones</a>
+                <a href="#" [class.active]="activeSection === 'contact'"
+                    (click)="setSection('contact'); $event.preventDefault()">Contacto</a>
+            </nav>
 
-        <div *ngIf="activeSection === 'about'">
-            <div class="section about">
-                <h2>About Me</h2>
-                <p>
-                    Systems engineer with over 5 years of experience in software development, cloud architecture design,
-                    and the creation of high-impact technological solutions, primarily in the mobility and healthcare
-                    sectors. Throughout my career, I have participated in full stack development projects, large-scale
-                    data processing, and the deployment of microservices on platforms such as Google Cloud Platform and
-                    Azure.
-                    I have had the opportunity to work in demanding production environments, taking on roles such as web
-                    developer, data engineer, and senior full stack developer, leading the development of REST APIs, IoT
-                    integrations, and artificial intelligence solutions applied to clinical data.
-                </p>
-                <p>
-                    I aim to contribute to impactful software projects while growing as a professional through constant
-                    learning and hands-on experience across diverse tech stacks.
-                </p>
+            <div *ngIf="activeSection === 'about'">
+                <div class="section about">
+                    <h2>Acerca de mi</h2>
+                    <p>
+                        Ingeniero de sistemas con más de 6 años de experiencia en desarrollo de software, diseño de
+                        arquitecturas cloud y creación de soluciones tecnológicas de alto impacto, principalmente en los
+                        sectores de movilidad y salud. A lo largo de mi carrera he participado en proyectos de desarrollo
+                        full stack, procesamiento de datos a gran escala y despliegue de microservicios en plataformas como
+                        Google Cloud Platform y Azure.
+
+                        He tenido la oportunidad de trabajar en entornos productivos exigentes, desempeñando roles como
+                        desarrollador web, ingeniero de datos y desarrollador full stack senior, liderando el desarrollo de
+                        APIs REST, integraciones IoT y soluciones de inteligencia artificial aplicadas a datos clínicos.
+                    </p>
+                    <p>
+                        Mi objetivo es contribuir en proyectos de software de alto impacto mientras crezco como profesional
+                        a través del aprendizaje continuo y la experiencia práctica con diversas tecnologías.
+                    </p>
+                </div>
+
+                <div class="section services">
+                    <h2>Lo que hago</h2>
+                    <div class="cards cards-2col">
+                        <div class="card">
+                            <div class="card-row">
+                                <img src="assets/web-desing.svg" alt="">
+                                <div>
+                                    <h3>Diseño Web</h3>
+                                    <p>Diseño moderno y de alta calidad a nivel profesional</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-row">
+                                <img src="assets/web-development.svg" alt="">
+                                <div>
+                                    <h3>Desarrollo Web</h3>
+                                    <p>Desarrollo de plataformas web de alta calidad a nivel profesional.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-row">
+                                <img src="assets/cloudcomputing.svg" alt="">
+                                <div>
+                                    <h3>Computación en la nube</h3>
+                                    <p>Uso de servicios en la nube como GCP y Azure.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-row">
+                                <img src="assets/artifical-intelligence.svg" alt="">
+                                <div>
+                                    <h3>Desarrollo de IA</h3>
+                                    <p>Desarrollo IA , modelos NLP, reconocimiento de objetos y modelos conversacionales.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section tech-stack">
+                    <h2>Tecnologías</h2>
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <img *ngFor="let tech of techStackInfinite" [src]="tech.src" [attr.alt]="tech.alt" />
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="section services">
-                <h2>What I'm Doing</h2>
-                <div class="cards cards-2col">
-                    <div class="card">
-                        <div class="card-row">
-                            <img src="assets/web-desing.svg" alt="">
-                            <div>
-                                <h3>Web Design</h3>
-                                <p>Modern and high-quality design at a professional level.</p>
+            <div *ngIf="activeSection === 'resume'">
+                <div class="section resume">
+                    <div class="resume-container">
+                        <section class="section">
+                            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Educación</h2>
+                            <div class="entry">
+                                <h3 class="entry-title">Ingeniero de Sistemas - Universidad Jorge Tadeo Lozano <span
+                                        class="year">2015 – 2021</span>
+                                </h3>
+                                <p class="entry-description">Formación integral en el diseño, desarrollo e implementación de
+                                    soluciones tecnológicas innovadoras, con énfasis en programación, bases de datos, redes,
+                                    inteligencia artificial y arquitectura de software, orientada al análisis y resolución
+                                    de problemas reales en diversos sectores productivos.</p>
+                            </div>
+                            <div class="entry">
+                                <h3 class="entry-title">Scrum Master - Certiprof <span class="year">2021 – 2021</span></h3>
+                                <p class="entry-description">Certificación que avala conocimientos y habilidades en la
+                                    aplicación del marco ágil Scrum, enfocada en liderar equipos de desarrollo, facilitar
+                                    ceremonias ágiles y asegurar la entrega continua de valor mediante prácticas
+                                    colaborativas, iterativas y orientadas a la mejora continua.</p>
+                            </div>
+                            <div class="entry">
+                                <h3 class="entry-title">Inteligencia Artificial Generativa (IAGen) - Academia Banco
+                                    Interamericano de Desarrollo<span class="year">2025 – 2025</span>
+                                </h3>
+                                <p class="entry-description">Curso enfocado en los fundamentos, riesgos y usos responsables
+                                    de la Inteligencia Artificial Generativa (IAGen) en el contexto de la función pública.
+                                    Proporciona conocimientos prácticos para aplicar esta tecnología de forma ética, segura
+                                    y crítica, reconociendo su impacto en la transformación digital del sector público.</p>
+                            </div>
+                        </section>
+
+                        <hr class="resume-divider">
+
+                        <section class="section">
+                            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiencia</h2>
+                            <div class="entry">
+                                <h3 class="entry-title">Full Stack Developer - SKG Tecnología <span class="year">2020 –
+                                        Present</span></h3>
+                                <p class="entry-description">Responsable del desarrollo e integración de nuevas
+                                    funcionalidades en una plataforma cloud serverless sobre Google Cloud Platform.
+                                    Participé en el diseño y construcción de microservicios con Micronaut, Spring Boot y
+                                    Python, integrando servicios como Google Pub/Sub, Redis y Cloud Functions. Desarrollé
+                                    interfaces modulares en Angular y colaboré en despliegues e infraestructura, asegurando
+                                    la operación continua de entornos productivos e IoT mediante ClearBlade.</p>
+                            </div>
+                            <div class="entry">
+                                <h3 class="entry-title">Full Stack Engineer - Instituto Nacional de Cancerología (Lab. de
+                                    innovación) <span class="year">2023 – Present</span></h3>
+                                <p class="entry-description">Desarrollo de soluciones tecnológicas para retos
+                                    institucionales en salud digital, con foco en interoperabilidad, analítica y
+                                    automatización. He diseñado APIs REST con Python (Flask) y Angular, implementado
+                                    procesos ETL desde SAP e IBM DB2 hacia BigQuery, y desarrollado modelos de IA para
+                                    analizar datos clínicos no estructurados. Participo activamente en proyectos de
+                                    innovación, contribuyendo al diseño de arquitecturas orientadas a la gestión avanzada de
+                                    información oncológica en Google Cloud Platform y Microsoft Azure.</p>
+                            </div>
+                            <div class="entry">
+                                <h3 class="entry-title">Aprendiz Ingeniero Datos - GrupoDot <span class="year">2020 –
+                                        2020</span></h3>
+                                <p class="entry-description">Apoyé procesos de consulta, transformación y análisis de
+                                    grandes volúmenes de datos en Google BigQuery, optimizando sentencias SQL para mejorar
+                                    el rendimiento en conjuntos de datos masivos. Realicé análisis exploratorio de datos
+                                    (EDA) with Python using pandas and pandas-profiling, generating automated reports
+                                    and evaluating data quality. También participé en la depuración y estructuración de
+                                    datasets para su posterior uso en procesos analíticos.</p>
+                            </div>
+                            <div class="entry">
+                                <h3 class="entry-title">Full Stack Developer junior - Zyos Ltda. <span class="year">2019 –
+                                        2020</span></h3>
+                                <p class="entry-description">Desempeñé funciones como desarrollador FullStack junior,
+                                    realizando correcciones y ajustes en la plataforma tanto a nivel front-end como back-
+                                    end. Además, participé en la implementación de nuevas funcionalidades y
+                                    en la mejora continua del sistema, utilizando tecnologías como Java,
+                                    PrimeFaces, JavaScript, CSS y HTML.</p>
+                            </div>
+                            <div class="entry">
+                                <h3 class="entry-title">Web Developer - Omega Web Systems <span class="year">2019 –
+                                        2019</span></h3>
+                                <p class="entry-description">Me desempeñe como desarrollador web creando diferentes sitios
+                                    web en
+                                    diferentes lenguajes como HTML, CSS, PHP, JQuery utilizando diferentes
+                                    frameworks como Bootstrap; Además de configurar bases de datos en
+                                    MySQL y configurar puertos de correos empresariales acorde a su dominio.</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="section skills">
+                    <h2 class="section-title"><i class="fas fa-sliders-h"></i> My Skills</h2>
+                    <div class="skills-list">
+                        <div class="skill">
+                            <span class="skill-name">Web Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-bar-inner" style="--progress: 50%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Backend</span>
+                            <div class="skill-bar">
+                                <div class="skill-bar-inner" style="--progress: 77%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Frontend</span>
+                            <div class="skill-bar">
+                                <div class="skill-bar-inner" style="--progress: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">DevOps</span>
+                            <div class="skill-bar">
+                                <div class="skill-bar-inner" style="--progress: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-bar-inner" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Cloud Computing</span>
+                            <div class="skill-bar">
+                                <div class="skill-bar-inner" style="--progress: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Desarrollo IA</span>
+                            <div class="skill-bar">
+                                <div class="skill-bar-inner" style="--progress: 30%"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-row">
-                            <img src="assets/web-development.svg" alt="">
-                            <div>
-                                <h3>Web Development</h3>
-                                <p>High-quality development of sites at the professional level.</p>
+                </div>
+            </div>
+
+            <div *ngIf="activeSection === 'portfolio'">
+                <div class="section portfolio">
+                    <h2 class="section-title"><i class="fas fa-folder-open"></i> Portfolio</h2>
+                    <div class="portfolio-grid">
+                        <a class="portfolio-card" href="https://portalqa-cdeg.transmilenio.gov.co/auth/login"
+                            target="_blank">
+                            <div class="portfolio-img-wrapper">
+                                <img src="assets/portfolio/transmilenio.png" alt="Project 1">
+                                <span class="portfolio-eye"><i class="fas fa-eye"></i></span>
+                            </div>
+                        </a>
+                        <a class="portfolio-card"
+                            href="https://qa-keycloak.seguridad-mosquera.com/auth/realms/smosquera-qa-env/protocol/openid-connect/auth?response_type=code&client_id=smosquera-qa-client&state=RjdiVkZ3M0ZJMlZhZDdLUzF1Y3J6eTNKMUgyTktRQ3ZiTlVWRVBnZjBtSkVv&redirect_uri=https%3A%2F%2Fqa.seguridad-mosquera.com%2Flanding&scope=openid%20profile%20email&code_challenge=coTgBLLyU7UzEvfxtR7-lN8VeRCxc6oMJWiGz-X9uOE&code_challenge_method=S256&nonce=RjdiVkZ3M0ZJMlZhZDdLUzF1Y3J6eTNKMUgyTktRQ3ZiTlVWRVBnZjBtSkVv"
+                            target="_blank">
+                            <div class="portfolio-img-wrapper">
+                                <img src="assets/portfolio/seguridadmosquera.png" alt="Project 2">
+                                <span class="portfolio-eye"><i class="fas fa-eye"></i></span>
+                            </div>
+                        </a>
+                        <a class="portfolio-card" href="https://qafront-snigrd.gestiondelriesgo.gov.co/#/auth/login"
+                            target="_blank">
+                            <div class="portfolio-img-wrapper">
+                                <img src="assets/portfolio/UNGRD.png" alt="Project 3">
+                                <span class="portfolio-eye"><i class="fas fa-eye"></i></span>
+                            </div>
+                        </a>
+                        <a class="portfolio-card" href="https://example.com/4" target="_blank">
+                            <div class="portfolio-img-wrapper">
+                                <img src="assets/portfolio/cocreamos.png" alt="Project 4">
+                                <span class="portfolio-eye"><i class="fas fa-eye"></i></span>
+                            </div>
+                        </a>
+                        <a class="portfolio-card" href="https://www.grupodot.com/productos/data-strategy-analisis-de-datos/"
+                            target="_blank">
+                            <div class="portfolio-img-wrapper">
+                                <img src="assets/portfolio/grupoDot.png" alt="Project 5">
+                                <span class="portfolio-eye"><i class="fas fa-eye"></i></span>
+                            </div>
+                        </a>
+                        <a class="portfolio-card" href="https://example.com/6" target="_blank">
+                            <div class="portfolio-img-wrapper">
+                                <img src="assets/portfolio/IA_deteccion.png" alt="Project 6">
+                                <span class="portfolio-eye"><i class="fas fa-eye"></i></span>
+                            </div>
+                        </a>
+                        <a class="portfolio-card" href="https://creditos.foebbva.com/page/index/inicio" target="_blank">
+                            <div class="portfolio-img-wrapper">
+                                <img src="assets/portfolio/FOE.png" alt="Project 7">
+                                <span class="portfolio-eye"><i class="fas fa-eye"></i></span>
+                            </div>
+                        </a>
+                        <a class="portfolio-card" href="https://www.segurosbonanza.co/" target="_blank">
+                            <div class="portfolio-img-wrapper">
+                                <img src="assets/portfolio/segurosBonanza.png" alt="Project 8">
+                                <span class="portfolio-eye"><i class="fas fa-eye"></i></span>
+                            </div>
+                        </a>
+                        <a class="portfolio-card" href="https://www.clubelnogal.com/" target="_blank">
+                            <div class="portfolio-img-wrapper">
+                                <img src="assets/portfolio/clubNogal.png" alt="Project 9">
+                                <span class="portfolio-eye"><i class="fas fa-eye"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section github-repos">
+                    <h2 class="section-title"><i class="fab fa-github"></i> GitHub Repositories</h2>
+                    <div class="github-repo-list">
+                        <a class="github-repo-card" href="https://github.com/kevinsteven7497/curriculum" target="_blank">
+                            <div class="repo-header">
+                                <i class="fab fa-github"></i>
+                                <span class="repo-name">curriculum</span>
+                            </div>
+                            <div class="repo-desc">CV personal en Angular, diseño moderno y responsivo.</div>
+                        </a>
+                        <a class="github-repo-card" href="https://github.com/kevinsteven7497/fastapi-template"
+                            target="_blank">
+                            <div class="repo-header">
+                                <i class="fab fa-github"></i>
+                                <span class="repo-name">fastapi-template</span>
+                            </div>
+                            <div class="repo-desc">Plantilla base para proyectos FastAPI con buenas prácticas.</div>
+                        </a>
+                        <a class="github-repo-card" href="https://github.com/kevinsteven7497/ai-healthcare" target="_blank">
+                            <div class="repo-header">
+                                <i class="fab fa-github"></i>
+                                <span class="repo-name">ai-healthcare</span>
+                            </div>
+                            <div class="repo-desc">Modelos de IA aplicados a datos clínicos y salud digital.</div>
+                        </a>
+                        <a class="github-repo-card" href="https://github.com/kevinsteven7497/ai-healthcare" target="_blank">
+                            <div class="repo-header">
+                                <i class="fab fa-github"></i>
+                                <span class="repo-name">micronaut-core</span>
+                            </div>
+                            <div class="repo-desc">Proyecto en Micronaut.</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="activeSection === 'certifications'">
+                <div class="section certifications">
+                    <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+                    <div class="certifications-grid">
+                        <div class="cert-card">
+                            <div class="cert-img-wrapper">
+                                <img src="assets/certifications/gcp.png" alt="Google Cloud Platform - Fundamentos">
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Google Cloud Platform - Fundamentos</h3>
+                                <div class="cert-academy">Udemy</div>
+                                <p class="cert-desc">Laboratorios y prácticas esenciales para dominar los fundamentos de
+                                    GCP.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-row">
-                            <img src="assets/cloudcomputing.svg" alt="">
-                            <div>
-                                <h3>Cloud Computing</h3>
-                                <p>Uso de servicios en la nube como GCP y Azure.</p>
+                        <div class="cert-card">
+                            <div class="cert-img-wrapper">
+                                <img src="assets/certifications/sql.jpg" alt="Curso certificado de SQL">
                             </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-row">
-                            <img src="assets/artifical-intelligence.svg" alt="">
-                            <div>
-                                <h3>IA Developer</h3>
-                                <p>Desarrollo IA , modelos NLP, reconocimiento de objetos y modelos conversacionales.
+                            <div class="cert-info">
+                                <h3 class="cert-title">Curso certificado de SQL</h3>
+                                <div class="cert-academy">Udemy</div>
+                                <p class="cert-desc">Certificación en SQL: consultas, modelado y gestión de bases de datos.
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section tech-stack">
-                <h2>Tech Stack</h2>
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <img *ngFor="let tech of techStackInfinite" [src]="tech.src" [attr.alt]="tech.alt" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div *ngIf="activeSection === 'resume'">
-            <div class="section resume">
-                <div class="resume-container">
-                    <section class="section">
-                        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
-                        <div class="entry">
-                            <h3 class="entry-title">Ingeniero de Sistemas - Universidad Jorge Tadeo Lozano <span
-                                    class="year">2015 – 2021</span>
-                            </h3>
-                            <p class="entry-description">Formación integral en el diseño, desarrollo e implementación de
-                                soluciones tecnológicas innovadoras, con énfasis en programación, bases de datos, redes,
-                                inteligencia artificial y arquitectura de software, orientada al análisis y resolución
-                                de problemas reales en diversos sectores productivos.</p>
+                        <div class="cert-card">
+                            <div class="cert-img-wrapper">
+                                <img src="assets/certifications/angular.png" alt="Angular: De cero a experto">
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Angular: De cero a experto</h3>
+                                <div class="cert-academy">Udemy</div>
+                                <p class="cert-desc">Curso completo de Angular, desde los fundamentos hasta proyectos
+                                    avanzados.</p>
+                            </div>
                         </div>
-                        <div class="entry">
-                            <h3 class="entry-title">Scrum Master - Certiprof <span class="year">2021 – 2021</span></h3>
-                            <p class="entry-description">Certificación que avala conocimientos y habilidades en la
-                                aplicación del marco ágil Scrum, enfocada en liderar equipos de desarrollo, facilitar
-                                ceremonias ágiles y asegurar la entrega continua de valor mediante prácticas
-                                colaborativas, iterativas y orientadas a la mejora continua.</p>
+                        <div class="cert-card">
+                            <div class="cert-img-wrapper">
+                                <img src="assets/certifications/dataengineer.png"
+                                    alt="Google Cloud Professional Data Engineer">
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Google Cloud Professional Data Engineer</h3>
+                                <div class="cert-academy">Udemy</div>
+                                <p class="cert-desc">Preparación y prácticas para la certificación oficial de Data Engineer
+                                    en GCP.</p>
+                            </div>
                         </div>
-                        <div class="entry">
-                            <h3 class="entry-title">Inteligencia Artificial Generativa (IAGen) - Academia Banco
-                                Interamericano de Desarrollo<span class="year">2025 – 2025</span>
-                            </h3>
-                            <p class="entry-description">Curso enfocado en los fundamentos, riesgos y usos responsables
-                                de la Inteligencia Artificial Generativa (IAGen) en el contexto de la función pública.
-                                Proporciona conocimientos prácticos para aplicar esta tecnología de forma ética, segura
-                                y crítica, reconociendo su impacto en la transformación digital del sector público.</p>
+                        <div class="cert-card">
+                            <div class="cert-img-wrapper">
+                                <img src="assets/certifications/java.png" alt="Universidad Java - Cero a Experto">
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Universidad Java - Cero a Experto</h3>
+                                <div class="cert-academy">Udemy</div>
+                                <p class="cert-desc">Formación integral en Java, desde los conceptos básicos hasta nivel
+                                    profesional.</p>
+                            </div>
                         </div>
-                    </section>
-
-                    <hr class="resume-divider">
-
-                    <section class="section">
-                        <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
-                        <div class="entry">
-                            <h3 class="entry-title">Full Stack Developer - SKG Tecnología <span class="year">2020 –
-                                    Present</span></h3>
-                            <p class="entry-description">Responsable del desarrollo e integración de nuevas
-                                funcionalidades en una plataforma cloud serverless sobre Google Cloud Platform.
-                                Participé en el diseño y construcción de microservicios con Micronaut, Spring Boot y
-                                Python, integrando servicios como Google Pub/Sub, Redis y Cloud Functions. Desarrollé
-                                interfaces modulares en Angular y colaboré en despliegues e infraestructura, asegurando
-                                la operación continua de entornos productivos e IoT mediante ClearBlade.</p>
+                        <div class="cert-card">
+                            <div class="cert-img-wrapper">
+                                <img src="assets/certifications/spring.jpg" alt="Spring Framework 6 & Spring Boot 3">
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Spring Framework 6 & Spring Boot 3</h3>
+                                <div class="cert-academy">Udemy</div>
+                                <p class="cert-desc">Desarrollo profesional con Spring Framework y Spring Boot desde cero a
+                                    experto.</p>
+                            </div>
                         </div>
-                        <div class="entry">
-                            <h3 class="entry-title">Full Stack Engineer - Instituto Nacional de Cancerología (Lab. de
-                                innovación) <span class="year">2023 – Present</span></h3>
-                            <p class="entry-description">Desarrollo de soluciones tecnológicas para retos
-                                institucionales en salud digital, con foco en interoperabilidad, analítica y
-                                automatización. He diseñado APIs REST con Python (Flask) y Angular, implementado
-                                procesos ETL desde SAP e IBM DB2 hacia BigQuery, y desarrollado modelos de IA para
-                                analizar datos clínicos no estructurados. Participo activamente en proyectos de
-                                innovación, contribuyendo al diseño de arquitecturas orientadas a la gestión avanzada de
-                                información oncológica en Google Cloud Platform y Microsoft Azure.</p>
-                        </div>
-                        <div class="entry">
-                            <h3 class="entry-title">Data Engineering Intern - GrupoDot <span class="year">2020 –
-                                    2020</span></h3>
-                            <p class="entry-description">Apoyé procesos de consulta, transformación y análisis de
-                                grandes volúmenes de datos en Google BigQuery, optimizando sentencias SQL para mejorar
-                                el rendimiento en conjuntos de datos masivos. Realicé análisis exploratorio de datos
-                                (EDA) con Python utilizando pandas y pandas-profiling, generando reportes automatizados
-                                y evaluando la calidad de datos. También participé en la depuración y estructuración de
-                                datasets para su posterior uso en procesos analíticos.</p>
-                        </div>
-                        <div class="entry">
-                            <h3 class="entry-title">Full Stack Developer junior - Zyos Ltda. <span class="year">2019 –
-                                    2020</span></h3>
-                            <p class="entry-description">Desempeñé funciones como desarrollador FullStack junior,
-                                realizando correcciones y ajustes en la plataforma tanto a nivel front-end como back-
-                                end. Además, participé en la implementación de nuevas funcionalidades y
-                                en la mejora continua del sistema, utilizando tecnologías como Java,
-                                PrimeFaces, JavaScript, CSS y HTML.</p>
-                        </div>
-                        <div class="entry">
-                            <h3 class="entry-title">Web Developer - Omega Web Systems <span class="year">2019 –
-                                    2019</span></h3>
-                            <p class="entry-description">Me desempeñe como desarrollador web creando diferentes sitios
-                                web en
-                                diferentes lenguajes como HTML, CSS, PHP, JQuery utilizando diferentes
-                                frameworks como Bootstrap; Además de configurar bases de datos en
-                                MySQL y configurar puertos de correos empresariales acorde a su dominio.</p>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <div class="section skills">
-                <h2 class="section-title"><i class="fas fa-sliders-h"></i> My Skills</h2>
-                <div class="skills-list">
-                    <div class="skill">
-                        <span class="skill-name">Web Design</span>
-                        <div class="skill-bar">
-                            <div class="skill-bar-inner" style="--progress: 50%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span class="skill-name">Backend</span>
-                        <div class="skill-bar">
-                            <div class="skill-bar-inner" style="--progress: 77%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span class="skill-name">Frontend</span>
-                        <div class="skill-bar">
-                            <div class="skill-bar-inner" style="--progress: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span class="skill-name">DevOps</span>
-                        <div class="skill-bar">
-                            <div class="skill-bar-inner" style="--progress: 40%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span class="skill-name">SQL</span>
-                        <div class="skill-bar">
-                            <div class="skill-bar-inner" style="--progress: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span class="skill-name">Cloud Computing</span>
-                        <div class="skill-bar">
-                            <div class="skill-bar-inner" style="--progress: 60%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span class="skill-name">Desarrollo IA</span>
-                        <div class="skill-bar">
-                            <div class="skill-bar-inner" style="--progress: 30%"></div>
+                        <div class="cert-card">
+                            <div class="cert-img-wrapper">
+                                <img src="assets/certifications/sqlServer.png" alt="Master en SQL Server">
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Master en SQL Server</h3>
+                                <div class="cert-academy">Udemy</div>
+                                <p class="cert-desc">Dominio completo de SQL Server, administración y optimización de bases
+                                    de datos.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div *ngIf="activeSection === 'portfolio'">
-            <div class="section portfolio">
-                <h2 class="section-title"><i class="fas fa-folder-open"></i> Portfolio</h2>
-                <p>Próximamente: aquí podrás ver algunos de mis proyectos destacados.</p>
-                <!-- Agrega aquí tu grid de proyectos si lo deseas -->
+            <div *ngIf="activeSection === 'contact'">
+                <div class="section contact">
+                    <h2 class="section-title"><i class="fas fa-envelope"></i> Contacto</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="contact-map">
+                                <iframe
+                                    src="https://www.openstreetmap.org/export/embed.html?bbox=-74.15%2C4.55%2C-74.05%2C4.75&amp;layer=carto&amp;marker=4.65%2C-74.1"
+                                    style="border:1px solid #ccc;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="contact-info">
+                                <div class="contact-row">
+                                    <span class="contact-label"><i class="fa-solid fa-envelope"></i> Correo:</span>
+                                    <span class="contact-value copyable" (click)="copyToClipboard('kevinsteven7497@gmail.com')"
+                                        title="Copiar correo">kevinsteven7497&#64;gmail.com</span>
+                                    <a class="contact-action" href="mailto:kevinsteven7497@gmail.com" title="Enviar correo"><i
+                                            class="fa-regular fa-paper-plane"></i></a>
+                                </div>
+                                <div class="contact-row">
+                                    <span class="contact-label"><i class="fa-brands fa-whatsapp"></i> WhatsApp:</span>
+                                    <span class="contact-value copyable" (click)="copyToClipboard('+573104593997')"
+                                        title="Copiar WhatsApp">+57 310 459 3997</span>
+                                    <a class="contact-action" href="https://wa.me/573104593997" target="_blank"
+                                        title="Enviar WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                                </div>
+                            </div>
+                            <form class="contact-form" (submit)="sendMail($event)">
+                                <h3>Envíame un mensaje</h3>
+                                <input type="text" name="name" placeholder="Tu nombre" required>
+                                <input type="email" name="email" placeholder="Tu correo" required>
+                                <textarea name="message" placeholder="Tu mensaje" rows="4" required></textarea>
+                                <button type="submit"><i class="fa-regular fa-paper-plane"></i> Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div *ngIf="activeSection === 'certifications'">
-            <div class="section certifications">
-                <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
-                <p>Próximamente: aquí podrás ver mis certificaciones y logros.</p>
-                <!-- Agrega aquí tus certificaciones si lo deseas -->
-            </div>
-        </div>
-
-        <div *ngIf="activeSection === 'contact'">
-            <div class="section contact">
-                <h2 class="section-title"><i class="fas fa-envelope"></i> Contact</h2>
-                <p>Puedes contactarme a través de mi correo: <a href="mailto:kevinsteven7497@gmail.com">kevinsteven7497&#64;gmail.com</a>
-                </p>
-                <!-- Puedes agregar un formulario de contacto aquí -->
-            </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
+</body>

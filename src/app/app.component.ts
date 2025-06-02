@@ -35,4 +35,27 @@ export class AppComponent {
   setSection(section: 'about' | 'resume' | 'portfolio' | 'certifications' | 'contact') {
     this.activeSection = section;
   }
+
+  copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text);
+    alert('¡Copiado al portapapeles!');
+  }
+
+  sendMail(event: Event) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+    const mailto = `mailto:kevinsteven7497@gmail.com?subject=Mensaje de ${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nContacto: ' + email)}`;
+    window.open(mailto, '_blank');
+    form.reset();
+  }
+
+  isLightTheme = false;
+
+  toggleTheme() {
+    this.isLightTheme = !this.isLightTheme;
+    document.body.classList.toggle('light-theme', this.isLightTheme);
+  }
 }
